@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑",sans-serif;
+}
+/*页面背景*/
+body{
+    background-color: #121212;
+    color:#fff;
+
+}
+/*顶部导航栏*
+/*导航栏*/
+.nav-bar{
+    width: 100%;
+    height: 60px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logo img{
+    height: 40px;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+}
+.nav-menu li{
+    margin: 0 15px;
+}
+.nav-menu li a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.user-touxiang img{
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+.login-btn{
+    height: 35px;
+    padding: 0 20px;
+    background: #e63946;
+    border:none;
+    color: #fff;
+    border-radius: 4px;
+    cursor:pointer;
+}
+body {
+    background-color: #121212; /* 深色背景适配游戏风格 */
+    color: #fff;
+    padding: 20px;
+}
+
+/* 容器：限制最大宽度，居中显示 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 标题样式 */
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #00e0ff; /* 无畏契约主题色 */
+    margin: 30px 0 40px;
+    letter-spacing: 2px;
+}
+
+/* 地图网格布局：每行2列，自动适配 */
+.map-grid {
+    display: grid;
+    /* 2列，列间距=左右内边距=20px */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* 图片之间的间距 */
+    padding: 0 20px; /* 左右边距，和图片间距一致 */
+}
+
+/* 单个地图卡片样式 */
+.map-card {
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 动画过渡 */
+}
+
+/* 地图图片容器：保证比例，溢出隐藏 */
+.map-img-wrapper {
+    aspect-ratio: 16/9; /* 地图图片常用比例 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* 地图图片样式：默认半透明，hover恢复不透明+上浮 */
+.map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片比例 */
+    opacity: 0.5; /* 默认半透明 */
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* hover效果：不透明+上浮5px */
+.map-card:hover .map-img {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* 地图名称样式 */
+.map-name {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+/* 响应式适配：手机端每行1列 */
+@media (max-width: 768px) {
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-title {
+        font-size: 2rem;
+    }
+}
