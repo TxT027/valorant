@@ -129,7 +129,7 @@
     }
     /* 移动端隐藏完整导航菜单，实际项目中通常会替换为汉堡菜单 */
     .nav-menu{
-        display: none;
+       letter-spacing: 0.5px;
     }
     .user-touxiang img{
         height: 28px;
