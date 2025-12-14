@@ -195,7 +195,37 @@ footer p {
     width: 20px;
     border-radius: 5px; /* 激活态变椭圆，更醒目 */
 }
+/* 按钮容器：固定在右下角 + 间距 */
+.wode {
+  position: fixed;
+  right: 20px;    /* 与右侧的间距 */
+  bottom: 20px;   /* 与底部的间距 */
+  z-index: 999;   /* 防止被其他元素遮挡 */
+}
 
+/* 按钮样式：白色背景 + 蓝色字体 */
+.登录{
+  background-color: #ffffff; /* 白色背景 */
+  color: #1677ff;            /* 蓝色字体 */
+  
+  padding: 0;       
+  border-radius: 8px;        /* 圆角（可选） */
+  cursor: pointer;           /* 鼠标悬浮手型 */
+  font-size: 14px;           /* 字体大小 */
+  text-decoration: none;     /* 去掉a标签默认下划线 */
+  display: inline-block;     /* 适配padding和margin */
+  width: 150px;
+  height: 30px;
+}
+
+/* 可选：悬浮效果，提升交互 */
+.登录:hover {
+  background-color: #f5faff;
+  color: #0958d9;
+  border-color: #0958d9;
+}
+ 
+  
 /* 移动端适配轮播按钮 */
 @media (max-width: 768px) {
     .carousel-btn {
