@@ -73,15 +73,15 @@ body{
     color:#ccc;
     text-decoration: none;
 }
-/* 响应式适配 */
+
+/* 响应式适配 - 平板设备 (768px及以下) */
 @media (max-width: 768px) {
-    /* 平板及以下设备调整登录框位置和大小 */
     .log-box {
         width: 80%;
         max-width: 300px;
-        right: 0;
+        right: auto; /* 取消右侧定位 */
         left: 50%;
-        transform: translate(-50%, -50%); /* 改为水平垂直居中 */
+        transform: translate(-50%, -50%); /* 水平垂直居中 */
         padding: 25px;
     }
     
@@ -91,20 +91,22 @@ body{
     }
 }
 
+/* 响应式适配 - 手机设备 (480px及以下) */
 @media (max-width: 480px) {
-    /* 手机设备进一步优化 */
     .log-box {
         width: 90%;
         padding: 20px;
+        top: 50%; /* 确保在小屏幕上居中 */
     }
     
     .input-group input, .log-btn {
-        height: 40px; /* 增大触摸区域 */
+        height: 40px; /* 增大触摸区域，便于手机操作 */
     }
     
     .extra {
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start; /* 垂直布局时左对齐 */
     }
     
     .extra a {
@@ -112,13 +114,17 @@ body{
     }
 }
 
+/* 小屏手机适配 (320px及以下) */
 @media (max-width: 320px) {
-    /* 小屏手机适配 */
     .log-box h1 {
         font-size: 20px;
     }
     
     .input-group label {
         font-size: 13px;
+    }
+    
+    .log-box {
+        padding: 15px; /* 进一步减小内边距 */
     }
 }
