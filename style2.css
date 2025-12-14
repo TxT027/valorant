@@ -1,0 +1,97 @@
+/*导航栏*/
+.nav-bar{
+    width: 100%;
+    height: 60px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logo img{
+    height: 40px;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+}
+.nav-menu li{
+    margin: 0 15px;
+}
+.nav-menu li a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.user-touxiang img{
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+.login-btn{
+    height: 35px;
+    padding: 0 20px;
+    background: #e63946;
+    border:none;
+    color: #fff;
+    border-radius: 4px;
+    cursor:pointer;
+}
+/*轮番图*/
+.carousel{
+    position: relative;
+    width:100%;
+    height: calc(100vh-60px);/*减去导航栏高度*/
+    overflow: hidden;/*超出的内容不显示*/
+}
+.carousel-img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;/*保持图片比例并且铺满*/
+}
+.carousel-img img.active{
+    display: block;
+}
+
+/*轮番控制按钮*/
+.carousel-prev,.carousel-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.carousel-prev{
+    left:20px;
+}
+.carousel-next{
+    right: 20px;
+}
+/*轮番指示器*/
+.carousel-indicators{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;/*子元素之间的横向距离*/
+
+}
+.carousel-indicators span{
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor:pointer;
+
+}
+.carousel-indicators span.active{
+    background: #e63946;/*激活态红色*/
+}
+

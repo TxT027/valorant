@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}/*全局重置+背景*/
+body{
+    font-family:"微软雅黑";
+}
+/*登录背景：设置背景图+英雄，实现全屏覆盖*/
+.log-bg{
+    width: 100vw;
+    height: 100vh;
+    background:url("valorant-log-bg.jpg")no-repeat center;
+    background-size: cover;/*背景图铺满*/
+    position: relative;/*登录框绝对定位*/
+}
+/*登录框：居中+半透明效果*/
+.log-box{
+    position:absolute;
+    top: 50%;/*上边框距离顶部50%，就是上边框在中线*/
+    right:15%;
+    transform: translateY(-50%);/*登录框向上移动自身的50%，就是完全居中*/
+    width: 300px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    color: #fff;
+}
+.log-box  h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+
+}
+/*输入框*/
+.input-group{
+    margin-bottom: 15px;
+}
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+
+}
+.input-group input{
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.9);
+}
+/*登录按钮*/
+.log-btn{
+    width:100%;
+    height: 35px;
+    background: #666;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #fff;
+    cursor: not-allowed;/*未激活状态,可加hover效果*/
+    margin-bottom: 10px;
+    
+}
+/*额外选项（记住我+注册）*/
+.extra{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.extra a{
+    color:#ccc;
+    text-decoration: none;
+}

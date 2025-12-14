@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑",sans-serif;
+}
+/*页面背景*/
+body{
+    background-color: #121212;
+    color:#fff;
+
+}
+/*顶部导航栏*
+/*导航栏*/
+.nav-bar{
+    width: 100%;
+    height: 60px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logo img{
+    height: 40px;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+}
+.nav-menu li{
+    margin: 0 15px;
+}
+.nav-menu li a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.user-touxiang img{
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+.login-btn{
+    height: 35px;
+    padding: 0 20px;
+    background: #e63946;
+    border:none;
+    color: #fff;
+    border-radius: 4px;
+    cursor:pointer;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    padding: 30px 20px;
+}
+
+/* 页面容器：限制最大宽度+居中 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 顶部卡片式容器 */
+.map-info-card {
+    display: flex;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 224, 255, 0.1);
+    padding: 20px;
+    margin-bottom: 40px;
+    gap: 20px;
+    /* 移动端适配 */
+    flex-wrap: wrap;
+}
+
+/* 卡片左侧图片区域 */
+.map-card-img {
+    flex: 1;
+    min-width: 300px; /* 最小宽度，防止缩太小 */
+}
+.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 卡片右侧信息区域 */
+.map-card-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+.map-name {
+    font-size: 2rem;
+    color: #00e0ff;
+}
+.map-hk-name, .map-type, .map-difficulty {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    line-height: 1.8;
+}
+
+/* 下方无框详情区域 */
+.map-detail-section {
+    display: flex;
+    gap: 20px;
+    /* 移动端适配 */
+    flex-wrap: wrap;
+    align-items: flex-start; /* 新增：防止左侧图片被拉伸 */
+}
+
+/* 左侧大图区域 */
+.detail-left-img {
+    flex: 2; /* 占比更大 */
+    min-width: 200px;
+}
+.layout-img {
+    width: 100%;
+    height: auto; /* 关键修改：从100%改为auto，保证图片完整展示 */
+    max-height: 600px; /* 可选：限制最大高度，避免图片过高 */
+    object-fit: contain; /* 关键修改：从cover改为contain，完整展示图片 */
+    border-radius: 8px;
+}
+
+/* 右侧区域：小图 + 推荐阵容 */
+.detail-right-wrap {
+    flex: 1; /* 占比更小 */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%; /* 新增：确保容器宽度自适应 */
+}
+/* 右侧小图（高度为左侧一半） */
+.detail-right-img {
+    flex: 1; /* 占右侧区域一半高度 */
+    width: 100%; /* 新增：宽度铺满父容器 */
+}
+.key-point-img {
+    width: 100%;
+    height: auto; /* 关键修改：从100%改为auto，保证图片完整展示 */
+    max-height: 300px; /* 可选：匹配左侧图片最大高度的一半 */
+    object-fit: contain; /* 关键修改：从cover改为contain，完整展示图片 */
+    border-radius: 8px;
+}
+/* 推荐阵容文本区域 */
+.recommend-team {
+    flex: 1; /* 占右侧区域另一半高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 100%; /* 关键：文本区域宽度和右侧图片一致 */
+    box-sizing: border-box; /* 新增：保证padding不影响宽度 */
+}
+.team-title {
+    font-size: 1.2rem;
+    color: #00e0ff;
+    margin-bottom: 8px;
+}
+.team-content {
+    font-size: 1.7rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+    width: 100%; /* 关键：文本宽度铺满父容器，和图片一致 */
+    word-wrap: break-word; /* 新增：自动换行，避免文本溢出 */
+    letter-spacing: 0.5px; /* 可选：调整字符间距，优化排版 */
+    padding: 0; /* 重置内边距，保证宽度对齐 */
+    margin: 0; /* 重置外边距 */
+}
+/* 响应式适配：手机端堆叠显示 */
+@media (max-width: 768px) {
+    .map-info-card {
+        flex-direction: column;
+    }
+    .map-detail-section {
+        flex-direction: column;
+    }
+    .map-name {
+        font-size: 1.5rem;
+    }
+}
