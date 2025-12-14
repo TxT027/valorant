@@ -73,17 +73,52 @@ body{
     color:#ccc;
     text-decoration: none;
 }
-/* 移动端适配 */
+/* 响应式适配 */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  
-  nav ul {
-    gap: 1rem;
-  }
-  
-  section {
-    padding: 1.5rem;
-  }
+    /* 平板及以下设备调整登录框位置和大小 */
+    .log-box {
+        width: 80%;
+        max-width: 300px;
+        right: 0;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 改为水平垂直居中 */
+        padding: 25px;
+    }
+    
+    .log-box h1 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 手机设备进一步优化 */
+    .log-box {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .input-group input, .log-btn {
+        height: 40px; /* 增大触摸区域 */
+    }
+    
+    .extra {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .extra a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    /* 小屏手机适配 */
+    .log-box h1 {
+        font-size: 20px;
+    }
+    
+    .input-group label {
+        font-size: 13px;
+    }
 }
