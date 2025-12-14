@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为HTML5 -->
+<html lang="zh-CN"> <!-- 语言设置为中文，利于SEO -->
+<head>
+    <!-- 字符编码：必须设置，避免中文乱码 -->
+    <meta charset="UTF-8">
+    <!-- 适配移动端：让页面在手机上正常显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO核心：页面标题（搜索引擎优先抓取） -->
+    <title>无畏契约介绍平台</title>
+    <!-- SEO核心：页面描述（搜索结果中显示的简介） -->
+    <meta name="description" content="我自己基于html，css，javascript做的一个小的项目，就当是在给自己练手，内容仅供参考，少的内容会在有空的时候更新！">
+    <!-- SEO：关键词（辅助搜索引擎识别主题） -->
+    <meta name="keywords" content="html实例，自制前端平台，无畏契约介绍">
+    <!-- 引入外部CSS（如果有） -->
+    <link rel="stylesheet" href="./css/style9.css">
+   
+</head>
+<body>
+    <!-- 页面头部（导航/标题） -->
+    <header>
+        <h1>无畏契约介绍平台</h1>
+        <nav>
+            <ul>
+                <li><a href="登陆页面.html">点击这里去往登陆页面！</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 页面核心内容 -->
+    <main>
+       <section id="home">
+    <h2>欢迎来到我的项目！</h2>
+    <p>这里是核心内容概述，项目分为了特工，地图，阵容以及枪械等等模块</p>
+    
+    <!-- 轮播图容器 -->
+    <div class="carousel-container">
+        <!-- 轮播图包裹层（用于滚动） -->
+        <div class="carousel-wrapper">
+            <!-- 轮播图片列表（可自行添加/删除 <img>） -->
+            <div class="carousel-slide">
+                <img src="特工介绍.png" alt="特工">
+            </div>
+            <div class="carousel-slide">
+                <img src="枪械介绍.png" alt="枪械">
+            </div>
+            <div class="carousel-slide">
+                <img src="地图介绍.png" alt="地图">
+            </div>
+             <div class="carousel-slide">
+                <img src="阵容介绍.png" alt="阵容">
+            </div>
+        </div>
+        
+        <!-- 左右切换按钮 -->
+        <button class="carousel-btn prev-btn">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn next-btn">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        
+        <!-- 轮播指示器（小圆点） -->
+        <div class="carousel-indicators"></div>
+    </div>
+</section>
+
+        <section id="about">
+            <h2>作者最喜欢的特工</h2>
+            <p>捷风！！！！！！！！！！！jett！！！！！！！！！！！！</p>
+            <img src="valorant-carousel5.jpg" alt="捷风">
+        </section>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer>
+        <p>© 2025 我的项目 | 联系方式：3377633326@qq.com</p>
+    </footer>
+
+    <script src="js/carousel.js"></script>
+  
+</body>
+</html>
