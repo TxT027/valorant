@@ -94,23 +94,79 @@
 .carousel-indicators span.active{
     background: #e63946;/*激活态红色*/
 }
-/* 响应式适配：手机端 */
-@media (max-width: 768px) {
-    .gun-info-card {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+/* 响应式适配 - 平板设备 (768px - 1023px) */
+@media (max-width: 1023px) {
+    .nav-menu li{
+        margin: 0 10px;
     }
-    .gun-name {
-        font-size: 1.8rem;
+    .nav-menu li a{
+        font-size: 14px;
     }
-    .prop-item {
-        font-size: 1.05rem;
+    .login-btn{
+        padding: 0 15px;
+        height: 32px;
+        font-size: 14px;
     }
-    .prop-label {
-        min-width: 100px; /* 移动端缩小标签宽度 */
+    .carousel-prev, .carousel-next{
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
     }
-    .gun-main-img {
-        max-height: 400px;
+    .carousel-indicators span{
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* 响应式适配 - 移动设备 (max-width: 767px) */
+@media (max-width: 767px) {
+    .nav-bar{
+        padding: 0 15px;
+        height: 55px;
+    }
+    .logo img{
+        height: 35px;
+    }
+    /* 移动端隐藏完整导航菜单，实际项目中通常会替换为汉堡菜单 */
+    .nav-menu{
+        display: none;
+    }
+    .user-touxiang img{
+        height: 28px;
+        margin-right: 10px;
+    }
+    .login-btn{
+        padding: 0 12px;
+        height: 30px;
+        font-size: 13px;
+    }
+    .carousel{
+        height: calc(60vh - 55px); /* 移动端轮播图高度适当降低 */
+    }
+    .carousel-prev, .carousel-next{
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        left: 10px;
+        right: 10px;
+    }
+    .carousel-indicators{
+        bottom: 15px;
+        gap: 8px;
+    }
+    .carousel-indicators span{
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* 小屏手机适配 (max-width: 480px) */
+@media (max-width: 480px) {
+    .carousel{
+        height: calc(50vh - 55px);
+    }
+    .login-btn{
+        padding: 0 10px;
+        font-size: 12px;
     }
 }
