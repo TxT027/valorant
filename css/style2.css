@@ -120,46 +120,15 @@
 
 /* 响应式适配 - 移动设备 (max-width: 767px) */
 @media (max-width: 767px) {
-    .nav-bar{
-        padding: 0 15px;
-        height: 55px;
-    }
-    .logo img{
-        height: 35px;
-    }
-    /* 移动端隐藏完整导航菜单，实际项目中通常会替换为汉堡菜单 */
+    /* 移除可能导致菜单隐藏或异常的样式，保持默认显示 */
     .nav-menu{
-       letter-spacing: 0.5px;
-    }
-    .user-touxiang img{
-        height: 28px;
-        margin-right: 10px;
-    }
-    .login-btn{
-        padding: 0 12px;
-        height: 30px;
-        font-size: 13px;
-    }
-    .carousel{
-        height: calc(60vh - 55px); /* 移动端轮播图高度适当降低 */
-    }
-    .carousel-prev, .carousel-next{
-        width: 32px;
-        height: 32px;
-        font-size: 18px;
-        left: 10px;
-        right: 10px;
-    }
-    .carousel-indicators{
-        bottom: 15px;
-        gap: 8px;
-    }
-    .carousel-indicators span{
-        width: 8px;
-        height: 8px;
+        /* 删掉原有的 letter-spacing: 0.5px; 避免不必要的字符间距影响 */
+        /* 确保菜单使用默认的flex布局显示 */
+        display: flex;
+        margin: 0;
+        padding: 0;
     }
 }
-
 /* 小屏手机适配 (max-width: 480px) */
 @media (max-width: 480px) {
     .carousel{
