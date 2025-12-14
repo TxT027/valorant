@@ -94,4 +94,23 @@
 .carousel-indicators span.active{
     background: #e63946;/*激活态红色*/
 }
-
+/* 响应式适配：手机端 */
+@media (max-width: 768px) {
+    .gun-info-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .gun-name {
+        font-size: 1.8rem;
+    }
+    .prop-item {
+        font-size: 1.05rem;
+    }
+    .prop-label {
+        min-width: 100px; /* 移动端缩小标签宽度 */
+    }
+    .gun-main-img {
+        max-height: 400px;
+    }
+}
