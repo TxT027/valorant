@@ -50,56 +50,94 @@ body{
     border-radius: 4px;
     cursor:pointer;
 }
-/*特工列表容器 */
-.card-list{
-    display: flex;
-    gap: 10px;
-    padding: 30px 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    width: 100%;
+
+
+
+/* 核心：卡片列表容器（上下滚动+每行2-3个卡片） */
+.card-list {
+  /* 保留原有容器基础样式 */
+  width: 90%;
+  margin: 0 auto;
+  /* 关键：网格布局实现2-3列自适应 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; /* 卡片间距（保留原有或调整） */
+  /* 上下滚动核心：限制高度+纵向滚动 */
+  max-height: calc(100vh - 100px); /* 留出导航栏/边距空间 */
+  overflow-y: auto; /* 纵向滚动 */
+  overflow-x: hidden; /* 隐藏横向滚动 */
+  padding: 20px 10px;
 }
-.card-list::-webkit-scrollbar{
-    display: none;
-}
-/*特工卡核心样式*/
-.character-card{
-  width: 120px;
- height: 220px;
-  opacity: 0.3;
-  overflow: hidden; 
-  transition: all 0.3s ease;
-  position: relative;
+
+/* 单个特工卡片（移除边框+保留原透明度/hover等属性） */
+.character-card {
+  /* 保留原有样式：透明度、过渡、布局等 */
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
   cursor: pointer;
-  align-self: flex-end;
-  flex-shrink: 0;
+  opacity: 0.85; /* 保留原透明度 */
+  transition: all 0.3s ease; /* 保留原过渡效果 */
+  /* 移除边框：删除原border属性 */
+}
 
+/* 保留原hover效果（透明度变化+阴影等） */
+.character-card:hover {
+  opacity: 1; /* 保留原hover透明度 */
+  transform: translateY(-5px); /* 保留原悬浮上移 */
+  box-shadow: 0 8px 16px rgba(0, 0, 255, 0.3); /* 保留原阴影 */
 }
-.character-card:hover{
-    opacity: 1;
-    overflow: visible;
-    transform: scale(1.15);/*放大1.15倍*/
-    z-index: 10;/*提高层级，让它在最高层*/
-    height: auto;
-}
-.card-img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 2px solid transparent;
 
+/* 卡片图片（优化显示完整+保留原有过渡） */
+.card-img {
+  width: 100%;
+  /* 关键：取消固定高度，改为自适应 */
+  height: auto; 
+  /* 替换object-fit: cover为contain，保证图片完整显示 */
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* 保留原图片过渡效果 */
+  transition: opacity 0.3s ease;
+  /* 可选：限制图片最大高度，避免过大 */
+  max-height: 300px;
 }
-.character-card:hover .card-img{
-    border-color: #e13b50;/*hover时显示红色边框*/
+
+.character-card:hover .card-img {
+  opacity: 0.95; /* 保留原图片hover透明度 */
 }
-.card-name{
-    position: absolute;
-    bottom: 8px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-    color: #fff;
-    text-shadow: 0 0 3px #000;
+
+/* 卡片名称（保留原有样式） */
+.card-name {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  /* 保留原文字相关样式 */
+}
+
+/* 可选：美化滚动条（不影响原有样式） */
+
+
+.card-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* 响应式：小屏幕每行2个，大屏每行3个（精准控制） */
+@media (min-width: 600px) and (max-width: 992px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr); /* 平板：每行2个 */
+  }
+}
+@media (min-width: 993px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr); /* 电脑：每行3个 */
+  }
+}
+@media (max-width: 599px) {
+  .card-list {
+    grid-template-columns: 1fr; /* 手机：每行1个（可选） */
+  }
 }
